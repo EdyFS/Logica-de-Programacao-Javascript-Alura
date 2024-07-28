@@ -94,3 +94,16 @@ function tabuada(numero){
     }
 
 }
+
+//Aula 4
+let listaGenerica = [];
+
+let linguagensDeProgramacao = ['Javascript', 'C', 'C++', 'Kotlin', 'Python'];
+//linguagensDeProgramacao.push('Javascript', 'C', 'C++', 'Kotlin', 'Python');
+
+linguagensDeProgramacao.push('Java', 'Ruby', 'GoLang');
+
+let listaDeNomes = ['Nome 1', 'Nome 2', 'Nome 3'];
+console.log(listaDeNomes[0]);
+console.log(listaDeNomes[1]);
+console.log(listaDeNomes[2]);
