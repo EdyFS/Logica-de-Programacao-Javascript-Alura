@@ -1,9 +1,13 @@
-let quantidade = document.getElementById('quantidade');
-let de = document.getElementById('de');
-let ate = document.getElementById('ate');
-let resposta = [];
+/*let quantidade = document.getElementById('quantidade').value;
+let de = document.getElementById('de').value;
+let ate = document.getElementById('ate').value;
+let resposta = [];*/
 
-function sortear(de, ate){
+function sortear(){
+    let quantidade = document.getElementById('quantidade').value;
+    let de = document.getElementById('de').value;
+    let ate = document.getElementById('ate').value;
+    let resposta = [];
     for(let i = 0; i < quantidade; i++){
         let numero = parseInt(Math.random() * (ate - de)+ de);
         console.log(numero);
