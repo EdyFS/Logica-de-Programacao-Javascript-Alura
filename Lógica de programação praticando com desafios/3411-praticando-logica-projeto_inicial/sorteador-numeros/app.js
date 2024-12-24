@@ -2,6 +2,7 @@ function sortear(){
 
 }
 
+
 function reiniciar(){
     
 }
