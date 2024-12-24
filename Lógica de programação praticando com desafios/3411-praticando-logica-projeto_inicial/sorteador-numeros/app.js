@@ -1,0 +1,7 @@
+function sortear(){
+
+}
+
+function reiniciar(){
+    
+}
