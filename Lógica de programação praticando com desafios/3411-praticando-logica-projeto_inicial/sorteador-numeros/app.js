@@ -3,6 +3,15 @@ function sortear(){
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
     let resposta = [];
+    let diferenca = (ate - de + 1);
+    if (de >= ate){
+        alert('O primeiro número deve ser menor que o segundo');
+        
+    }
+    else if(quantidade > diferenca){
+        alert('Quantidde de números sorteados maior que o intervalo escolhido');
+    }
+    else{
     for(let i = 0; i < quantidade; i++){
         let numero = parseInt(Math.random() * (ate - de + 1)+ de);
         while(resposta.includes(numero)){
@@ -17,6 +26,7 @@ function sortear(){
     console.log(resposta);
     //console.log(texto);
     alterarStatusBotao();
+}
 }
 
 function reiniciar(){
