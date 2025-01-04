@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Desafios</h1>
+    <form>
+        <input type="number" id= "Primeiro" placeholder="Primeiro Número">
+        <input type="number" id="Segundo" placeholder="Segundo Número">
+        <button onclick="numeros()" type="button">Números</button>
+    </form>
+
+    <h2>Calculadora</h2>
+    <form id="calcula">
+        <input type="number" id= "um" placeholder="Primeiro Número">
+        <input type="number" id="dois" placeholder="Segundo Número">
+        <select name="calculadora" id="calc">
+            <option value="adicao">Adição</option>
+            <option value="subtracao">Subtração</option>
+            <option value="multiplicacao">Multiplicação</option>
+            <option value="divisao">Divisão</option>
+        </select>
+        <button onclick="calcular()" type="button">Calculadora</button>
+    </form>
+    <section id="resposta">
+
+    </section>
+
+    <h2>Par ou impar</h2>
+    <form>
+        <input type="number" id="numero" placeholder="numero">
+    <button onclick="paridade()" type="button">Paridade</button>
+</form>
+    <div id="parimpar">
+    
+
+    </div>
+
+    <h2>Temperatura</h2>
+    <form>
+    <select name="escala" id="escala">
+        <option value="celsius">Celsius para Farenheit</option>
+        <option value="farenheit">Farenheit para Celsius</option>
+    </select>
+    <input type="number" id="temperatura" placeholder="Temperatura">
+    <button onclick="converterTemperatura()" type="button">Converter temperatura</button>
+</form>
+<div id="temperatura-convertida">
+
+</div>
+
+    <script src="desafio.js"></script>
+</body>
+</html>
