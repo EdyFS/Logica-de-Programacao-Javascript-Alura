@@ -17,34 +17,43 @@ function adicionar(){
 }
 
 function sortear(){
-    primeiro = parseInt((Math.random() * (listaNomes.length)));
-    segundo = parseInt((Math.random() * (listaNomes.length)));
-    console.log(primeiro);
-    console.log(segundo);
-    console.log(listaNomes[primeiro]);
+    //while (primeirosSorteados.length < listaNomes.length){
+    sortearPrimeiro();
+    sortearSegundo();
     while (primeirosSorteados.includes(primeiro)){
-        primeiro = parseInt((Math.random() * (listaNomes.length)));
+        sortearPrimeiro();
     }
     while (segundosSorteados.includes(segundo)){
-        segundo = parseInt((Math.random() * (listaNomes.length)));
+        sortearSegundo();
     }
-    
-    if (primeiro != segundo){
-        primeirosSorteados.push(primeiro);
-        segundosSorteados.push(segundo);
-        let sorteio = document.getElementById('lista-sorteio');
-        sorteio.textContent = sorteio.textContent + listaNomes[primeiro] + '→' + listaNomes[segundo] + '<br>';
+    console.log(primeiro);
+    console.log(segundo);
+    if (primeiro == segundo){
+        sortear();
     }
     else{
-        //sortear();
+        primeirosSorteados.push(primeiro);
+        console.log(primeirosSorteados);
+        segundosSorteados.push(segundo);
+        console.log(segundosSorteados);
+        let sorteio = document.getElementById('lista-sorteio');
+        sorteio.innerHTML = sorteio.innerHTML + listaNomes[primeiro] + '→' + listaNomes[segundo] + '<br>';
     }
-    sortear();
+
+//}
 
 }
 
 function sortearPrimeiro(){
-    
+    primeiro = parseInt((Math.random() * (listaNomes.length)));
+    return primeiro;
 }
+
+function sortearSegundo(){
+    segundo = parseInt((Math.random() * (listaNomes.length)));
+    return segundo;
+}
+
 function reiniciar(){
     nome.value = '';
     console.log(nome);
@@ -56,6 +65,8 @@ function reiniciar(){
     document.getElementById('nome-amigo').textContent = '';
     console.log(listaNomes);
     document.getElementById('lista-sorteio').textContent = '';
+    primeirosSorteados = [];
+    segundosSorteados = [];
 }
 
 function remover(){
