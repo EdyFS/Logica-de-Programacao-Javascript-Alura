@@ -20,12 +20,6 @@ function sortear(){
     //while (primeirosSorteados.length < listaNomes.length){
     sortearPrimeiro();
     sortearSegundo();
-    while (primeirosSorteados.includes(primeiro)){
-        sortearPrimeiro();
-    }
-    while (segundosSorteados.includes(segundo)){
-        sortearSegundo();
-    }
     console.log(primeiro);
     console.log(segundo);
     if (primeiro == segundo){
@@ -38,6 +32,45 @@ function sortear(){
         console.log(segundosSorteados);
         let sorteio = document.getElementById('lista-sorteio');
         sorteio.innerHTML = sorteio.innerHTML + listaNomes[primeiro] + '→' + listaNomes[segundo] + '<br>';
+        
+        while(listaNomes.length > primeirosSorteados.length){
+            if (listaNomes.length -1 > primeirosSorteados.length){ 
+        primeiro = segundo;
+        sortearSegundo();
+        console.log(primeiro);
+    console.log(segundo);
+        /*while (primeirosSorteados.includes(primeiro)){
+            sortearPrimeiro();
+        }*/
+        while (segundosSorteados.includes(segundo) || primeirosSorteados.includes(segundo)){
+            sortearSegundo();
+        }
+        primeirosSorteados.push(primeiro);
+        console.log(primeirosSorteados);
+        segundosSorteados.push(segundo);
+        console.log(segundosSorteados);
+        let sorteio = document.getElementById('lista-sorteio');
+        sorteio.innerHTML = sorteio.innerHTML + listaNomes[primeiro] + '→' + listaNomes[segundo] + '<br>';
+    }
+    else{
+        primeiro = segundo;
+        sortearSegundo();
+        console.log(primeiro);
+    console.log(segundo);
+        /*while (primeirosSorteados.includes(primeiro)){
+            sortearPrimeiro();
+        }*/
+        while (segundosSorteados.includes(segundo)){
+            sortearSegundo();
+        }
+        primeirosSorteados.push(primeiro);
+        console.log(primeirosSorteados);
+        segundosSorteados.push(segundo);
+        console.log(segundosSorteados);
+        let sorteio = document.getElementById('lista-sorteio');
+        sorteio.innerHTML = sorteio.innerHTML + listaNomes[primeiro] + '→' + listaNomes[segundo] + '<br>';
+    }
+    }
     }
 
 //}
