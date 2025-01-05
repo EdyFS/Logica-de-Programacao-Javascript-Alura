@@ -1,6 +1,10 @@
 let listaNomes = [];
 let nome;
 let lista;
+let primeiro;
+let segundo;
+let primeirosSorteados = [];
+let segundosSorteados = [];
 
 function adicionar(){
     nome = document.getElementById('nome-amigo');
@@ -13,33 +17,34 @@ function adicionar(){
 }
 
 function sortear(){
-    let primeiro = parseInt((Math.random() * (listaNomes.length)));
-    let segundo = parseInt((Math.random() * (listaNomes.length)));
+    primeiro = parseInt((Math.random() * (listaNomes.length)));
+    segundo = parseInt((Math.random() * (listaNomes.length)));
     console.log(primeiro);
     console.log(segundo);
     console.log(listaNomes[primeiro]);
-    let rodadas = 0;
-    let numerosSorteados = [];
-    numerosSorteados.push(primeiro);
-    while(rodadas < numerosSorteados.length){
-        if(primeiro != segundo){
-    let sorteio = document.getElementById('lista-sorteio');
-    sorteio.textContent = sorteio.textContent + `${listaNomes[primeiro]} → ${listaNomes[segundo]}`;
-    primeiro = segundo;
-    console.log(primeiro);
-    segundo = parseInt((Math.random() * (listaNomes.length)));
-    console.log(segundo);
-    numerosSorteados.push(primeiro);
-        }
-        else{
-            segundo = parseInt((Math.random() * (listaNomes.length)));
-        }
-    rodadas++;
+    while (primeirosSorteados.includes(primeiro)){
+        primeiro = parseInt((Math.random() * (listaNomes.length)));
     }
-        //sortear();
+    while (segundosSorteados.includes(segundo)){
+        segundo = parseInt((Math.random() * (listaNomes.length)));
+    }
     
+    if (primeiro != segundo){
+        primeirosSorteados.push(primeiro);
+        segundosSorteados.push(segundo);
+        let sorteio = document.getElementById('lista-sorteio');
+        sorteio.textContent = sorteio.textContent + listaNomes[primeiro] + '→' + listaNomes[segundo] + '<br>';
+    }
+    else{
+        //sortear();
+    }
+    sortear();
+
 }
 
+function sortearPrimeiro(){
+    
+}
 function reiniciar(){
     nome.value = '';
     console.log(nome);
@@ -50,6 +55,7 @@ function reiniciar(){
     lista.textContent = '';
     document.getElementById('nome-amigo').textContent = '';
     console.log(listaNomes);
+    document.getElementById('lista-sorteio').textContent = '';
 }
 
 function remover(){
