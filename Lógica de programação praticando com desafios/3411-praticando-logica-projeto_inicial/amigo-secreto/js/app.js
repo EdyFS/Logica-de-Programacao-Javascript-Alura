@@ -1,4 +1,4 @@
-let listaNomes = [];
+/*let listaNomes = [];
 let nome;
 let lista;
 let primeiro;
@@ -82,9 +82,9 @@ function sortearSegundo() {
 function reiniciar() {
     nome.value = '';
     console.log(nome);
-    /*for(let i = 0; i <= listaNomes.length; i++){
-        listaNomes.pop(i);
-    }*/
+    //for(let i = 0; i <= listaNomes.length; i++){
+        //listaNomes.pop(i);
+    //}
     listaNomes = [];
     lista.textContent = '';
     document.getElementById('nome-amigo').textContent = '';
@@ -96,14 +96,18 @@ function reiniciar() {
 
 function remover() {
     listaNomes.pop();
-}
+}*/
 
-/*
+
 //Solução Alura
 let amigos = [];
 
 function adicionar(){
     let amigo = document.getElementById('nome-amigo');
+    if (amigo.value == ''){
+        alert('Informe o nome do amigo!');
+        return;
+    }
     let lista = document.getElementById('lista-amigos');
     amigos.push(amigo.value);
     if (lista.textContent == ''){
@@ -117,6 +121,10 @@ function adicionar(){
 }
 
 function sortear(){
+    if (amigos.length < 4){
+        alert('Adicione pelo menos 4 amigos');
+        return;
+    }
     embaralha(amigos);
     let sorteio = document.getElementById('lista-sorteio');
     for (let i = 0; i < amigos.length; i++){
@@ -147,4 +155,3 @@ function reiniciar(){
     document.getElementById('lista-amigos').innerHTML = '';
     document.getElementById('lista-sorteio').innerHTML = '';
 }
-*/
